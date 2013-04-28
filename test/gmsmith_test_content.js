@@ -14,7 +14,7 @@ var content = extend({}, commonTest, {
 });
 
 // If we are on Windows, skip performance test items
-if (process.arch === 'win32') {
+if (process.platform === 'win32') {
   delete content["interpretting a ridiculous amount of images"];
   delete content["does not crash"];
   delete content["returns an image"];
