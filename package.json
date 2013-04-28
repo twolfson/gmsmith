@@ -26,14 +26,14 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "preinstall": "gm",
+    "preinstall": "gm help",
     "test": "doubleshot --timeout 60000"
   },
   "dependencies": {
     "obj-extend": "~0.1.0",
     "temporary": "0.0.5",
     "async": "~0.2.7",
-    "gm": "~1.9.0"
+    "gm": "~1.4.2"
   },
   "devDependencies": {
     "grunt": "~0.3.17",
