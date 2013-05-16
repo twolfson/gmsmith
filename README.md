@@ -5,6 +5,13 @@
 [gm]: http://aheckmann.github.io/gm/
 [spritesmith]: https://github.com/Ensighten/spritesmith
 
+## Requirements
+`gmsmith` depends on [gm](https://github.com/aheckmann/gm) which depends on [Graphics Magick](http://www.graphicsmagick.org/).
+
+I have found it is best to install from the site rather than through a package manager (e.g. `apt-get`) to get the latest as well as without transparency issues.
+
+This module has been developed and tested against `1.3.17`.
+
 ## Getting Started
 Install the module with: `npm install gmsmith`
 
