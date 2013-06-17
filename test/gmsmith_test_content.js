@@ -7,9 +7,13 @@ var smith = require('../lib/gmsmith'),
 var content = extend({}, commonTest, {
   'gmsmith': function () {
     this.smith = smith;
+    smith.set({imagemagick: false});
 
     var expectedDir = __dirname + '/expected_files/';
     this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
+  },
+  'running against imagemagick': function () {
+    smith.set({imagemagick: true});
   }
 });
 
