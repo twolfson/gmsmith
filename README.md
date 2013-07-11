@@ -1,4 +1,4 @@
-# gmsmith
+# gmsmith [![Donate on Gittip](http://badgr.co/gittip/twolfson.png)](https://www.gittip.com/twolfson/)
 
 [GM][gm] engine for [spritesmith][spritesmith].
 
