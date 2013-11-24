@@ -31,7 +31,7 @@ var content = extend({}, commonTest, {
       }
     });
 
-    // console.log(encodeURIComponent(actualImage));
+    console.log(encodeURIComponent(actualImage));
 
     expect(matchesAnImage).to.equal(true);
   }
