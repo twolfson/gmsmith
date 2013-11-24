@@ -7,6 +7,7 @@ node_js:
 #   allow_failures:
 #     - node_js: "0.11"
 env:
+  # TODO: Verify that the `||` logic in preinstall will work in Windows
   - TEST_IMAGEMAGICK=TRUE
 
 install:
