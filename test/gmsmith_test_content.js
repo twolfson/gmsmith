@@ -27,6 +27,8 @@ var content = extend({}, commonTest, {
       }
     });
 
+    console.log(encodeURIComponent(actualImage));
+
     expect(matchesAnImage).to.equal(true);
   }
   // TODO: Re-enable this
