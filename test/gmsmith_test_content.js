@@ -17,10 +17,7 @@ var content = extend({}, commonTest, {
     var expectedDir = __dirname + '/expected_files';
     this.expectedFilepaths = [
       expectedDir + '/multiple-gm.png',
-      expectedDir + '/multiple-im.png',
-      // expectedDir + '/multiple2.png',
-      // expectedDir + '/multiple3.png',
-      // expectedDir + '/multiple4.png'
+      expectedDir + '/multiple-im.png'
     ];
   },
   'can output an image': [function convertResultToPixels (cb) {
@@ -33,22 +30,6 @@ var content = extend({}, commonTest, {
         cb(err);
       });
     });
-    // var buff = new Buffer(this.result, 'binary');
-
-    // // Repurposed from https://github.com/mikolalysenko/get-pixels/blob/2ac98645119244d6e52afcef5fe52cc9300fb27b/node-pixels.js
-    // var that = this;
-    // pngparse.parse(buff, function(err, img_data) {
-    //   if(err) {
-    //     cb(err);
-    //     return;
-    //   }
-
-    //   that.actualPixels = ndarray(new Uint8Array(img_data.data),
-    //     [img_data.height|0, img_data.width|0, 4],
-    //     [4*img_data.width|0, 4, 1],
-    //     0);
-    //   cb();
-    // });
   }, function assertExpectedImages (done) {
     // Assert the actual image is the same expected
     var actualPixels = this.actualPixels,
@@ -66,15 +47,12 @@ var content = extend({}, commonTest, {
           return cb(err);
         }
 
-        // TODO: Make this a deep equals
-        // console.log(actualPixels, expectedPixels);
         matchesAnImage = deepEqual(actualPixels, expectedPixels);
         cb();
       });
     }, function (err) {
       if (err) { return done(err); }
 
-      // console.log(encodeURIComponent(actualImage));
       var expect = require('chai').expect;
       expect(matchesAnImage).to.equal(true);
       done();

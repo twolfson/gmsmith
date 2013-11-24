@@ -8,12 +8,15 @@ node_js:
 #     - node_js: "0.11"
 env:
   # TODO: Verify that the `||` logic in preinstall will work in Windows
+  - TEST_GRAPHICSMAGICK=TRUE
   - TEST_IMAGEMAGICK=TRUE
 
 install:
-  # Install imagemagick
-  - sudo apt-get update
-  - sudo apt-get install imagemagick -y
+  # Run our install script
+  - test/install.sh
+
+  # Output the im/gm version
+  - if which convert 2> /dev/null; then convert -version; else gm -version; fi
 
   # Install dependencies
   - npm install
