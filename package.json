@@ -26,7 +26,7 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "preinstall": "gm help 2>&1 > /dev/null",
+    "preinstall": "gm help",
     "test": "doubleshot --timeout 60000"
   },
   "dependencies": {
