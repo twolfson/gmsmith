@@ -17,17 +17,20 @@ var content = extend({}, commonTest, {
     var expectedDir = __dirname + '/expected_files/';
     this.expectedFilepaths = [
       expectedDir + '/multiple.png',
-      expectedDir + '/multiple2.png',
-      expectedDir + '/multiple3.png',
-      expectedDir + '/multiple4.png'
+      // expectedDir + '/multiple2.png',
+      // expectedDir + '/multiple3.png',
+      // expectedDir + '/multiple4.png'
     ];
   },
   'can output an image': [function convertResultToPixels (cb) {
     var that = this;
     require('fs').writeFileSync('a.png', this.result, 'binary');
-    getPixels('a.png', function (err, actualPixels) {
-      that.actualPixels = actualPixels;
-      cb(err);
+    require('child_process').exec('convert a.png -depth 8 b.png', function (err, stderr, stdout) {
+      console.log(err, stderr, stdout);
+      getPixels('b.png', function (err, actualPixels) {
+        that.actualPixels = actualPixels;
+        cb(err);
+      });
     });
     // var buff = new Buffer(this.result, 'binary');
 
@@ -63,7 +66,7 @@ var content = extend({}, commonTest, {
         }
 
         // TODO: Make this a deep equals
-        console.log(actualPixels, expectedPixels);
+        // console.log(actualPixels, expectedPixels);
         matchesAnImage = deepEqual(actualPixels, expectedPixels);
         cb();
       });
