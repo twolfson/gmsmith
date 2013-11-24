@@ -26,7 +26,7 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "preinstall": "convert -version",
+    "preinstall": "gm -version || convert -version",
     "test": "doubleshot --timeout 60000"
   },
   "dependencies": {
