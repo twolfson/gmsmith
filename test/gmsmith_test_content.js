@@ -10,7 +10,11 @@ var content = extend({}, commonTest, {
     smith.set({imagemagick: process.env.TEST_IMAGEMAGICK});
 
     var expectedDir = __dirname + '/expected_files/';
-    this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
+    this.expectedFilepaths = [
+      expectedDir + '/multiple.png',
+      expectedDir + '/multiple2.png',
+      expectedDir + '/multiple3.png'
+    ];
   },
   'can output an image':  function () {
     // Assert the actual image is the same expected
@@ -27,7 +31,8 @@ var content = extend({}, commonTest, {
       }
     });
 
-    console.log(encodeURIComponent(actualImage));
+    // console.log(encodeURIComponent(actualImage));
+    fs.writeFileSync('xyz.png', actualImage, 'binary');
 
     expect(matchesAnImage).to.equal(true);
   }
