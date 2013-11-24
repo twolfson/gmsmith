@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "grunt": "~0.3.17",
-    "doubleshot": "~1.1.2",
-    "spritesmith-engine-test": "~0.1.0"
+    "doubleshot": "~2.13.1",
+    "spritesmith-engine-test": "~1.0.0"
   },
   "keywords": [
     "phantomjs",
