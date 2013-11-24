@@ -23,22 +23,28 @@ var content = extend({}, commonTest, {
     ];
   },
   'can output an image': [function convertResultToPixels (cb) {
-    var buff = new Buffer(this.result, 'binary');
-
-    // Repurposed from https://github.com/mikolalysenko/get-pixels/blob/2ac98645119244d6e52afcef5fe52cc9300fb27b/node-pixels.js
     var that = this;
-    pngparse.parse(buff, function(err, img_data) {
-      if(err) {
-        cb(err);
-        return;
-      }
-
-      that.actualPixels = ndarray(new Uint8Array(img_data.data),
-        [img_data.height|0, img_data.width|0, 4],
-        [4*img_data.width|0, 4, 1],
-        0);
-      cb();
+    require('fs').writeFileSync('a.png', this.result, 'binary');
+    getPixels('a.png', function (err, actualPixels) {
+      that.actualPixels = actualPixels;
+      cb(err);
     });
+    // var buff = new Buffer(this.result, 'binary');
+
+    // // Repurposed from https://github.com/mikolalysenko/get-pixels/blob/2ac98645119244d6e52afcef5fe52cc9300fb27b/node-pixels.js
+    // var that = this;
+    // pngparse.parse(buff, function(err, img_data) {
+    //   if(err) {
+    //     cb(err);
+    //     return;
+    //   }
+
+    //   that.actualPixels = ndarray(new Uint8Array(img_data.data),
+    //     [img_data.height|0, img_data.width|0, 4],
+    //     [4*img_data.width|0, 4, 1],
+    //     0);
+    //   cb();
+    // });
   }, function assertExpectedImages (done) {
     // Assert the actual image is the same expected
     var actualPixels = this.actualPixels,
