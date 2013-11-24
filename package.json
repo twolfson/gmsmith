@@ -1,7 +1,7 @@
 {
   "name": "gmsmith",
   "description": "GM engine for spritesmith",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/twolfson/gmsmith",
   "author": {
     "name": "Todd Wolfson",
@@ -26,7 +26,7 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "preinstall": "gm help 2>&1 > /dev/null",
+    "preinstall": "gm help",
     "test": "doubleshot --timeout 60000"
   },
   "dependencies": {
