@@ -1,6 +1,8 @@
 // Load in parts to make our content
 var smith = require('../lib/gmsmith'),
+    async = require('async'),
     extend = require('obj-extend'),
+    getPixels = require('get-pixels'),
     commonTest = require('spritesmith-engine-test').content;
 
 // Duck punch over test items
@@ -17,25 +19,35 @@ var content = extend({}, commonTest, {
       expectedDir + '/multiple4.png'
     ];
   },
-  'can output an image':  function () {
+  'can output an image': [function convertResultToPixels (done) {
+    console.log(this.result);
+    done();
+  }, function assertExpectedImages (done) {
     // Assert the actual image is the same expected
-    var actualImage = this.result,
+    var actualPixels = this.actualPixels,
         matchesAnImage = false;
 
     // ANTI-PATTERN: Looping over set without identifiable lines for stack traces
-    var fs = require('fs');
-    var expect = require('chai').expect;
-    this.expectedFilepaths.forEach(function testAgainstExpected (filepath) {
-      if (!matchesAnImage) {
-        var expectedImage = fs.readFileSync(filepath, 'binary');
-        matchesAnImage = actualImage === expectedImage;
+    async.forEachSeries(this.expectedFilepaths, function testAgainstExpected (filepath, cb) {
+      if (matchesAnImage) {
+        return;
       }
+
+      getPixels(filepath, function (err, expectedPixels) {
+        if (err) {
+          return cb(err);
+        }
+
+        // TODO: Make this a deep equals
+        matchesAnImage = actualPixels === expectedPixels;
+      });
+    }, function () {
+      // console.log(encodeURIComponent(actualImage));
+      var expect = require('chai').expect;
+      expect(matchesAnImage).to.equal(true);
+      done();
     });
-
-    // console.log(encodeURIComponent(actualImage));
-
-    expect(matchesAnImage).to.equal(true);
-  }
+  }]
 });
 
 // If we are on Windows, skip performance test items

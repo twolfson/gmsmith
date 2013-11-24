@@ -39,7 +39,8 @@
     "grunt": "~0.3.17",
     "doubleshot": "~2.13.1",
     "spritesmith-engine-test": "~1.0.0",
-    "chai": "~1.8.1"
+    "chai": "~1.8.1",
+    "get-pixels": "~1.0.1"
   },
   "keywords": [
     "phantomjs",
