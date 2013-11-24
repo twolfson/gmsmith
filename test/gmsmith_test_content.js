@@ -23,13 +23,20 @@ var content = extend({}, commonTest, {
   'can output an image': [function convertResultToPixels (cb) {
     var that = this;
     require('fs').writeFileSync('a.png', this.result, 'binary');
-    require('child_process').exec('convert a.png -depth 8 b.png', function (err, stderr, stdout) {
-      console.log(err, stderr, stdout);
-      getPixels('b.png', function (err, actualPixels) {
+    if (process.env.TEST_IMAGEMAGICK) {
+      require('child_process').exec('convert a.png -depth 8 b.png', function (err, stderr, stdout) {
+        console.log(err, stderr, stdout);
+        getPixels('b.png', function (err, actualPixels) {
+          that.actualPixels = actualPixels;
+          cb(err);
+        });
+      });
+    } else {
+      getPixels('a.png', function (err, actualPixels) {
         that.actualPixels = actualPixels;
         cb(err);
       });
-    });
+    }
   }, function assertExpectedImages (done) {
     // Assert the actual image is the same expected
     var actualPixels = this.actualPixels,
