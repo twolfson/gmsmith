@@ -42,7 +42,8 @@
     "chai": "~1.8.1",
     "get-pixels": "~1.0.1",
     "pngparse": "~2.0.1",
-    "ndarray": "~1.0.8"
+    "ndarray": "~1.0.8",
+    "deep-equal": "~0.1.0"
   },
   "keywords": [
     "phantomjs",

@@ -1,10 +1,11 @@
 // Load in parts to make our content
 var smith = require('../lib/gmsmith'),
     async = require('async'),
+    deepEqual = require('deep-equal'),
     extend = require('obj-extend'),
     getPixels = require('get-pixels'),
-    pngparse = require('pngparse'),
     ndarray = require('ndarray'),
+    pngparse = require('pngparse'),
     commonTest = require('spritesmith-engine-test').content;
 
 // Duck punch over test items
@@ -45,8 +46,9 @@ var content = extend({}, commonTest, {
 
     // ANTI-PATTERN: Looping over set without identifiable lines for stack traces
     async.forEachSeries(this.expectedFilepaths, function testAgainstExpected (filepath, cb) {
+      console.log('hey');
       if (matchesAnImage) {
-        return;
+        return cb();
       }
 
       getPixels(filepath, function (err, expectedPixels) {
@@ -55,9 +57,13 @@ var content = extend({}, commonTest, {
         }
 
         // TODO: Make this a deep equals
-        matchesAnImage = actualPixels === expectedPixels;
+        console.log(actualPixels, expectedPixels);
+        matchesAnImage = deepEqual(actualPixels, expectedPixels);
+        cb();
       });
-    }, function () {
+    }, function (err) {
+      if (err) { return done(err); }
+
       // console.log(encodeURIComponent(actualImage));
       var expect = require('chai').expect;
       expect(matchesAnImage).to.equal(true);
