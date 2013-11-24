@@ -32,7 +32,6 @@ var content = extend({}, commonTest, {
     });
 
     // console.log(encodeURIComponent(actualImage));
-    fs.writeFileSync('xyz.png', actualImage, 'binary');
 
     expect(matchesAnImage).to.equal(true);
   }
