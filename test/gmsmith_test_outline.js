@@ -7,12 +7,5 @@ if (process.platform === 'win32') {
 }
 
 module.exports = {
-  'gmsmith': extend(outline, {
-    // DEV: Removing these from tests for now since they make `npm test` unapproachable when remote debugging
-    // 'running against imagemagick': {
-    //   'interpretting an image file': {
-    //     'can output an image': true
-    //   }
-    // }
-  })
+  'gmsmith': outline
 };

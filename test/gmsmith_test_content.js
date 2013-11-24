@@ -7,15 +7,11 @@ var smith = require('../lib/gmsmith'),
 var content = extend({}, commonTest, {
   'gmsmith': function () {
     this.smith = smith;
-    smith.set({imagemagick: false});
+    smith.set({imagemagick: process.env.TEST_IMAGEMAGICK});
 
     var expectedDir = __dirname + '/expected_files/';
     this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
-  },
-  // TODO: Re-enable this
-  // 'running against imagemagick': function () {
-  //   smith.set({imagemagick: true});
-  // }
+  }
 });
 
 // If we are on Windows, skip performance test items
