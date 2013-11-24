@@ -12,9 +12,10 @@ var content = extend({}, commonTest, {
     var expectedDir = __dirname + '/expected_files/';
     this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
   },
-  'running against imagemagick': function () {
-    smith.set({imagemagick: true});
-  }
+  // TODO: Re-enable this
+  // 'running against imagemagick': function () {
+  //   smith.set({imagemagick: true});
+  // }
 });
 
 // If we are on Windows, skip performance test items
