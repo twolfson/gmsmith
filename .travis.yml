@@ -12,6 +12,7 @@ env:
 
 install:
   # Install imagemagick
+  - sudo apt-get update -qq
   - sudo apt-get install imagemagick -y
 
   # Install dependencies
