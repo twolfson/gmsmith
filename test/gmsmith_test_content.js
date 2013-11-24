@@ -11,6 +11,25 @@ var content = extend({}, commonTest, {
 
     var expectedDir = __dirname + '/expected_files/';
     this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
+  },
+  'can output an image':  function () {
+    // Assert the actual image is the same expected
+    var actualImage = this.result,
+        matchesAnImage = false;
+
+    // ANTI-PATTERN: Looping over set without identifiable lines for stack traces
+    var fs = require('fs');
+    var expect = require('chai').expect;
+    this.expectedFilepaths.forEach(function testAgainstExpected (filepath) {
+      if (!matchesAnImage) {
+        var expectedImage = fs.readFileSync(filepath, 'binary');
+        matchesAnImage = actualImage === expectedImage;
+      }
+    });
+
+    console.log(encodeURIComponent(actualImage));
+
+    expect(matchesAnImage).to.equal(true);
   }
 });
 
