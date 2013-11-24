@@ -22,5 +22,8 @@ install:
   # Install dependencies
   - npm install
 
+script:
+  - npm test
+
 notifications:
   email: false
