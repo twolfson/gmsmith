@@ -13,7 +13,8 @@ var content = extend({}, commonTest, {
     this.expectedFilepaths = [
       expectedDir + '/multiple.png',
       expectedDir + '/multiple2.png',
-      expectedDir + '/multiple3.png'
+      expectedDir + '/multiple3.png',
+      expectedDir + '/multiple4.png'
     ];
   },
   'can output an image':  function () {
@@ -31,7 +32,7 @@ var content = extend({}, commonTest, {
       }
     });
 
-    console.log(encodeURIComponent(actualImage));
+    // console.log(encodeURIComponent(actualImage));
 
     expect(matchesAnImage).to.equal(true);
   }
