@@ -16,7 +16,7 @@ install:
   - test/install.sh
 
   # Output the im/gm version
-  - if which convert 2> /dev/null; then convert -version; else gm -version; fi
+  - if test -n "$TEST_IMAGEMAGICK"; then convert -version; else gm -version; fi
 
   # Install dependencies
   - npm install
