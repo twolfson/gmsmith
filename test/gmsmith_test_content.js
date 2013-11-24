@@ -14,9 +14,10 @@ var content = extend({}, commonTest, {
     this.smith = smith;
     smith.set({imagemagick: process.env.TEST_IMAGEMAGICK});
 
-    var expectedDir = __dirname + '/expected_files/';
+    var expectedDir = __dirname + '/expected_files';
     this.expectedFilepaths = [
-      expectedDir + '/multiple.png',
+      expectedDir + '/multiple-gm.png',
+      expectedDir + '/multiple-im.png',
       // expectedDir + '/multiple2.png',
       // expectedDir + '/multiple3.png',
       // expectedDir + '/multiple4.png'
