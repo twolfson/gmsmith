@@ -23,11 +23,13 @@ var content = extend({}, testContent, {
   },
   'can output an image': [function saveResultToFile (done) {
     this.tmpFile1 = new Tempfile();
+    this.tmpFile1.path += '.png';
     this.tmpFile1.writeFile(this.result, 'binary', done);
   }, function adjustBitDepth (done) {
     this.actualFile = this.tmpFile1;
     if (process.env.TEST_IMAGEMAGICK) {
       this.tmpFile2 = new Tempfile();
+      this.tmpFile2.path += '.png';
       this.actualFile = this.tmpFile2;
       exec('convert ' + this.tmpFile1.path + ' -depth 8 ' + this.tmpFile2.path, done);
     } else {
