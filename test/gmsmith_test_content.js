@@ -48,7 +48,6 @@ var content = extend({}, testContent, {
 
     // ANTI-PATTERN: Looping over set without identifiable lines for stack traces
     async.forEachSeries(this.expectedFilepaths, function testAgainstExpected (filepath, cb) {
-      console.log('hey');
       if (matchesAnImage) {
         return cb();
       }
