@@ -10,7 +10,7 @@ var exec = require('child_process').exec,
     smith = require('../lib/gmsmith');
 
 // Duck punch over test items
-var content = extend({}, commonTest, {
+var content = extend({}, testContent, {
   'gmsmith': function () {
     this.smith = smith;
     smith.set({imagemagick: process.env.TEST_IMAGEMAGICK});
@@ -21,23 +21,24 @@ var content = extend({}, commonTest, {
       expectedDir + '/multiple-im.png'
     ];
   },
-  'can output an image': [function convertResultToPixels (cb) {
-    var that = this;
-    require('fs').writeFileSync('a.png', this.result, 'binary');
+  'can output an image': [function saveResultToFile (done) {
+    this.tmpFile1 = new Tempfile();
+    this.tmpFile1.writeFile(this.result, 'binary', done);
+  }, function adjustBitDepth (done) {
+    this.actualFile = this.tmpFile1;
     if (process.env.TEST_IMAGEMAGICK) {
-      require('child_process').exec('convert a.png -depth 8 b.png', function (err, stderr, stdout) {
-        console.log(err, stderr, stdout);
-        getPixels('b.png', function (err, actualPixels) {
-          that.actualPixels = actualPixels;
-          cb(err);
-        });
-      });
+      this.tmpFile2 = new Tempfile();
+      this.actualFile = this.tmpFile2;
+      exec('convert ' + this.tmpFile1.path + ' -depth 8 ' + this.tmpFile2.path, done);
     } else {
-      getPixels('a.png', function (err, actualPixels) {
-        that.actualPixels = actualPixels;
-        cb(err);
-      });
+      done();
     }
+  }, function getActualPixels (done) {
+    var that = this;
+    getPixels(this.actualFile.path, function (err, actualPixels) {
+      that.actualPixels = actualPixels;
+      done(err);
+    });
   }, function assertExpectedImages (done) {
     // Assert the actual image is the same expected
     var actualPixels = this.actualPixels,
@@ -64,6 +65,12 @@ var content = extend({}, commonTest, {
       expect(matchesAnImage).to.equal(true);
       done();
     });
+  }, function cleanupFiles () {
+    this.tmpFile1.unlinkSync();
+
+    if (this.tmpFile2) {
+      this.tmpFile2.unlinkSync();
+    }
   }]
 });
 
