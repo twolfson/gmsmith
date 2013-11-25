@@ -1,12 +1,13 @@
 // Load in parts to make our content
-var smith = require('../lib/gmsmith'),
+var exec = require('child_process').exec,
     async = require('async'),
+    expect = require('chai').expect,
     deepEqual = require('deep-equal'),
-    extend = require('obj-extend'),
     getPixels = require('get-pixels'),
-    ndarray = require('ndarray'),
-    pngparse = require('pngparse'),
-    commonTest = require('spritesmith-engine-test').content;
+    extend = require('obj-extend'),
+    Tempfile = require('temporary/lib/file'),
+    testContent = require('spritesmith-engine-test').content,
+    smith = require('../lib/gmsmith');
 
 // Duck punch over test items
 var content = extend({}, commonTest, {
@@ -60,7 +61,6 @@ var content = extend({}, commonTest, {
     }, function (err) {
       if (err) { return done(err); }
 
-      var expect = require('chai').expect;
       expect(matchesAnImage).to.equal(true);
       done();
     });
