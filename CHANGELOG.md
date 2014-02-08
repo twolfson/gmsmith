@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.4.0 - Implicitly discover `imagemagick` when `gm` doesn't exist and `imagemagick` flag is unspecified
+
 0.3.0 - Added imagemagick to test suite and corrected `preinstall` for `package.json`
 
 0.2.3 - Removed postinstall piping to allow cross-platform
