@@ -33,7 +33,8 @@
     "obj-extend": "~0.1.0",
     "temporary": "0.0.5",
     "async": "~0.2.7",
-    "gm": "~1.4.2"
+    "gm": "~1.4.2",
+    "which": "~1.0.5"
   },
   "devDependencies": {
     "grunt": "~0.3.17",
