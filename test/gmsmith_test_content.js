@@ -13,7 +13,9 @@ var exec = require('child_process').exec,
 var content = extend({}, testContent, {
   'gmsmith': function () {
     this.smith = smith;
-    smith.set({imagemagick: process.env.TEST_IMAGEMAGICK});
+    if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
+      smith.set({imagemagick: true});
+    }
 
     var expectedDir = __dirname + '/expected_files';
     this.expectedFilepaths = [

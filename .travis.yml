@@ -9,6 +9,7 @@ matrix:
 env:
   - TEST_GRAPHICSMAGICK=TRUE
   - TEST_IMAGEMAGICK=TRUE
+  - TEST_IMAGEMAGICK=IMPLICIT
 
 install:
   # Run our install script
