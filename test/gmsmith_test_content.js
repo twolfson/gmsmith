@@ -13,10 +13,9 @@ var exec = require('child_process').exec,
 var content = extend({}, testContent, {
   'gmsmith': function () {
     this.smith = smith;
+    smith.clearSettings();
     if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
       smith.set({imagemagick: true});
-    } else {
-      smith.clearSettings();
     }
 
     var expectedDir = __dirname + '/expected_files';
