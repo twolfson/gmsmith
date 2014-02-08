@@ -15,6 +15,8 @@ var content = extend({}, testContent, {
     this.smith = smith;
     if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
       smith.set({imagemagick: true});
+    } else {
+      smith.clearSettings();
     }
 
     var expectedDir = __dirname + '/expected_files';
