@@ -20,7 +20,7 @@ var content = extend({}, testContent, {
       smith.set({imagemagick: true});
     } else if (process.env.TEST_IMAGEMAGICK === 'IMPLICIT_WITH_SET') {
       console.log('calling set2');
-      smith.set();
+      smith.set({});
     }
 
     var expectedDir = __dirname + '/expected_files';
