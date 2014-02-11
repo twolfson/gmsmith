@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.4.2 - Repaired legacy logic that caused 0.4.0 patch to fail whenever `.set` was called
+
 0.4.1 - Re-enabling Travis CI tests for all supported node versions
 
 0.4.0 - Implicitly discover `imagemagick` when `gm` doesn't exist and `imagemagick` flag is unspecified
