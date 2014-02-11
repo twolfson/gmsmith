@@ -14,12 +14,9 @@ var content = extend({}, testContent, {
   'gmsmith': function () {
     this.smith = smith;
     smith.clearSettings();
-    console.log('TEST_IMAGEMAGICK', process.env.TEST_IMAGEMAGICK);
     if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
-      console.log('calling set');
       smith.set({imagemagick: true});
     } else if (process.env.TEST_IMAGEMAGICK === 'IMPLICIT_WITH_SET') {
-      console.log('calling set2');
       smith.set({});
     }
 
