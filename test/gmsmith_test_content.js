@@ -18,6 +18,9 @@ var content = extend({}, testContent, {
     if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
       console.log('calling set');
       smith.set({imagemagick: true});
+    } else if (process.env.TEST_IMAGEMAGICK === 'IMPLICIT_WITH_SET') {
+      console.log('calling set2');
+      smith.set();
     }
 
     var expectedDir = __dirname + '/expected_files';
