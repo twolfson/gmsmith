@@ -3,7 +3,8 @@ var gmsmith = require('../lib/gmsmith');
 var spritesmithEngineTest = require('spritesmith-engine-test');
 
 // Configure gmsmith for our environment
-// TODO: The downcasting for `imagemagick` is probably still necessary -_-;;
+// DEV: In case it recurs, we had downcasting of imagemagick's spritesheets to 8 bit for `get-pixels` loading
+//   See https://github.com/twolfson/gmsmith/blob/0.4.3/test/gmsmith_test_content.js#L39
 gmsmith.clearSettings();
 if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
   gmsmith.set({imagemagick: true});
