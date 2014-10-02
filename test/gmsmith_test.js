@@ -3,6 +3,7 @@ var gmsmith = require('../lib/gmsmith');
 var spritesmithEngineTest = require('spritesmith-engine-test');
 
 // Configure gmsmith for our environment
+// TODO: The downcasting for `imagemagick` is probably still necessary -_-;;
 gmsmith.clearSettings();
 if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
   gmsmith.set({imagemagick: true});
