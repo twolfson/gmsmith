@@ -37,9 +37,6 @@
     "which": "~1.0.5"
   },
   "devDependencies": {
-    "chai": "~1.8.1",
-    "deep-equal": "~0.1.0",
-    "get-pixels": "~1.0.1",
     "grunt": "~0.3.17",
     "mocha": "~1.21.4",
     "spritesmith-engine-test": "~1.0.0"

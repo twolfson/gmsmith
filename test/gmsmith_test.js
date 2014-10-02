@@ -1,5 +1,14 @@
 // Load our dependencies
+var gmsmith = require('../lib/gmsmith');
 var spritesmithEngineTest = require('spritesmith-engine-test');
+
+// Configure gmsmith for our environment
+gmsmith.clearSettings();
+if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
+  gmsmith.set({imagemagick: true});
+} else if (process.env.TEST_IMAGEMAGICK === 'IMPLICIT_WITH_SET') {
+  gmsmith.set({});
+}
 
 // Run our tests
 spritesmithEngineTest.run({
