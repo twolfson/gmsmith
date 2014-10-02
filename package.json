@@ -27,22 +27,22 @@
   },
   "scripts": {
     "preinstall": "gm -version || convert -version",
-    "test": "doubleshot --timeout 60000"
+    "test": "mocha --timeout 60000"
   },
   "dependencies": {
-    "obj-extend": "~0.1.0",
-    "temporary": "0.0.5",
     "async": "~0.2.7",
     "gm": "~1.4.2",
+    "obj-extend": "~0.1.0",
+    "temporary": "0.0.5",
     "which": "~1.0.5"
   },
   "devDependencies": {
-    "grunt": "~0.3.17",
-    "doubleshot": "~2.13.1",
-    "spritesmith-engine-test": "~1.0.0",
     "chai": "~1.8.1",
+    "deep-equal": "~0.1.0",
     "get-pixels": "~1.0.1",
-    "deep-equal": "~0.1.0"
+    "grunt": "~0.3.17",
+    "mocha": "~1.21.4",
+    "spritesmith-engine-test": "~1.0.0"
   },
   "keywords": [
     "phantomjs",
