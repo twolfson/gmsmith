@@ -1,7 +1,7 @@
 {
   "name": "gmsmith",
   "description": "GM engine for spritesmith",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "homepage": "https://github.com/twolfson/gmsmith",
   "author": {
     "name": "Todd Wolfson",

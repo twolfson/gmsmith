@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.4.4 - Upgraded to `spritesmith-engine-test@2.0.0` and moved to `mocha`
+
 0.4.3 - Upgraded `npm` inside Travis CI to fix `node@0.8` issues
 
 0.4.2 - Repaired legacy logic that caused 0.4.0 patch to fail whenever `.set` was called
