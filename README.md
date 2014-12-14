@@ -18,7 +18,7 @@ This module has been developed and tested against `1.3.17`.
 ## Getting Started
 Install the module with: `npm install gmsmith`
 
-```javascript
+```js
 // Convert images into gmsmith objects
 var images = ['img1.jpg', 'img2.png'];
 gmsmith.createImages(this.images, function handleImages (err, imgs) {
