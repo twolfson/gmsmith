@@ -44,6 +44,12 @@ This module was built to the specification for all spritesmith modules.
 
 https://github.com/twolfson/spritesmith-engine-test
 
+### canvas\['export'\](options, cb)
+These are options specific `gmsmith`
+
+- options `Object`
+  - quality `Number` - Quality of output image on a scale from 0 to 100
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint using [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
 
