@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.5.0 - Upgraded `gm` and `temporary` dependencies to add `node@0.12` and `iojs` support
+
 0.4.5 - Added documentation for `quality`
 
 0.4.4 - Upgraded to `spritesmith-engine-test@2.0.0` and moved to `mocha`
