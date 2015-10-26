@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.5.1 - Added `foundry` for release
+
 0.5.0 - Upgraded `gm` and `temporary` dependencies to add `node@0.12` and `iojs` support
 
 0.4.5 - Added documentation for `quality`
