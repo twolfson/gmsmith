@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.6.0 - Cleaned up technical debt (e.g. writing to disk, disjoint yet related parts of code)
+
 0.5.4 - Removed `grunt` as a `devDependency`
 
 0.5.3 - Added `twolfson-style` for linting
