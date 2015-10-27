@@ -51,7 +51,7 @@ These are options specific `gmsmith`
   - quality `Number` - Quality of output image on a scale from 0 to 100
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint using [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint using `npm run lint` and test via `npm test`.
 
 ## Donating
 Support this project and [others by twolfson][gittip] via [gittip][].
