@@ -1,12 +1,12 @@
 # gmsmith [![Build status](https://travis-ci.org/twolfson/gmsmith.png?branch=master)](https://travis-ci.org/twolfson/gmsmith)
 
-[GM][gm] engine for [spritesmith][spritesmith].
+[GM][gm] engine for [spritesmith][].
 
 [gm]: http://aheckmann.github.io/gm/
 [spritesmith]: https://github.com/Ensighten/spritesmith
 
 ## Requirements
-`gmsmith` depends on [gm](https://github.com/aheckmann/gm) which depends on [Graphics Magick](http://www.graphicsmagick.org/).
+`gmsmith` depends on [gm][] which depends on [Graphics Magick][].
 
 I have found it is best to install from the site rather than through a package manager (e.g. `apt-get`) to get the latest as well as without transparency issues.
 
@@ -14,6 +14,8 @@ This module has been developed and tested against `1.3.17`.
 
 > Alertnatively, you can use ImageMagick which is implicitly discovered if `gm` is not installed.
 > http://www.imagemagick.org/script/index.php
+
+[Graphics Magick]: http://www.graphicsmagick.org/
 
 ## Getting Started
 Install the module with: `npm install gmsmith`
