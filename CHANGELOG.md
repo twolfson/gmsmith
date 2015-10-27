@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.5.4 - Removed `grunt` as a `devDependency`
+
 0.5.3 - Added `twolfson-style` for linting
 
 0.5.2 - Updated supported node versions to `>= 0.10.0`
