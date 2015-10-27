@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+# Exit early on error
+set -e
 
+# Perform our installations
 if test -n "$TEST_IMAGEMAGICK"; then
   # Install imagemagick
   sudo apt-get update
