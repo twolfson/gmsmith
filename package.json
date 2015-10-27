@@ -37,7 +37,6 @@
     "concat-stream": "~1.5.1",
     "gm": "~1.17.0",
     "obj-extend": "~0.1.0",
-    "temporary": "0.0.8",
     "which": "~1.0.5"
   },
   "devDependencies": {
