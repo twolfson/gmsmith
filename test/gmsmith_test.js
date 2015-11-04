@@ -16,8 +16,9 @@ if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
 spritesmithEngineTest.run({
   engine: gmsmith,
   engineName: 'gmsmith',
-  options: {
+  tests: {
+    renderGifCanvas: false,
     // If we are on Windows, skip over performance test (it cannot handle the long argument string)
-    skipRidiculousImagesTest: process.platform === 'win32'
+    renderManyPngImages: process.platform === 'win32'
   }
 });
