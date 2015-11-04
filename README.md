@@ -42,15 +42,15 @@ gmsmith.createImages(this.images, function handleImages (err, imgs) {
 ```
 
 ## Documentation
-This module was built to the specification for all spritesmith modules.
+This module was built to the specification for spritesmith engines.
 
-https://github.com/twolfson/spritesmith-engine-test
+https://github.com/twolfson/spritesmith-engine-spec
 
-### canvas\['export'\](options, cb)
-These are options specific `gmsmith`
+### `canvas.export(options, cb)`
+Our `export` method provides support for the following options:
 
 - options `Object`
-  - quality `Number` - Quality of output image on a scale from 0 to 100
+    - quality `Number` - Quality of output image on a scale from 0 to 100
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint using `npm run lint` and test via `npm test`.
