@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.6.1 - Moved to `spritesmith-engine-test@3.0.0` to clean up technical debt
+
 0.6.0 - Cleaned up technical debt (e.g. writing to disk, disjoint yet related parts of code)
 
 0.5.4 - Removed `grunt` as a `devDependency`
