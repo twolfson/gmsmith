@@ -23,6 +23,9 @@ before_install:
   - npm install npm@1.x.x -g
 
 install:
+  # Update `apt` to get latest im/gm version
+  - sudo apt-get update
+
   # Run our install script
   - test/install.sh
 
