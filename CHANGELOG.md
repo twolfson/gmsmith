@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.6.3 - Fixed failing Travis CI tests
+
 0.6.2 - Cleaned up README and updated spec link to `spritesmith-engine-spec`
 
 0.6.1 - Moved to `spritesmith-engine-test@3.0.0` to clean up technical debt
