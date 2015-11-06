@@ -21,7 +21,7 @@
       "url": "https://github.com/twolfson/gmsmith/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/gmsmith",
+  "main": "lib/engine",
   "engines": {
     "node": ">= 0.10.0"
   },
