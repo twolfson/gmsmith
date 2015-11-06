@@ -5,17 +5,17 @@ var spritesmithEngineTest = require('spritesmith-engine-test');
 // Configure gmsmith for our environment
 // DEV: In case it recurs, we had downcasting of imagemagick's spritesheets to 8 bit for `get-pixels` loading
 //   See https://github.com/twolfson/gmsmith/blob/0.4.3/test/gmsmith_test_content.js#L39
-gmsmith.clearSettings();
+var engineOptions = {};
 if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
-  gmsmith.set({imagemagick: true});
-} else if (process.env.TEST_IMAGEMAGICK === 'IMPLICIT_WITH_SET') {
-  gmsmith.set({});
+  engineOptions.imagemagick = true;
 }
 
 // Run our tests
 spritesmithEngineTest.run({
   engine: gmsmith,
   engineName: 'gmsmith',
+  // TODO: Be sure to add support for this in `spritesmith-engine-test`
+  engineOptions: engineOptions,
   tests: {
     // DEV: When we have exactly 1 png, it seems to darken the entire canvas
     //   Thankfully we still have a test for multiple png images which passes
