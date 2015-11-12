@@ -6,7 +6,7 @@
 [spritesmith]: https://github.com/Ensighten/spritesmith
 
 ## Requirements
-`gmsmith` depends on [gm][] which depends on [Graphics Magick][].
+`gmsmith` depends on [gm][] which depends on [GraphicsMagick][].
 
 I have found it is best to install from the site rather than through a package manager (e.g. `apt-get`) to get the latest as well as without transparency issues.
 
@@ -15,7 +15,7 @@ This module has been developed and tested against `1.3.17`.
 > Alertnatively, you can use ImageMagick which is implicitly discovered if `gm` is not installed.
 > http://www.imagemagick.org/script/index.php
 
-[Graphics Magick]: http://www.graphicsmagick.org/
+[GraphicsMagick]: http://www.graphicsmagick.org/
 
 ## Getting Started
 Install the module with: `npm install gmsmith`
@@ -65,7 +65,7 @@ This is also known as `new Gmsmith`.
 Our `Engine` constructor provides support for the following options:
 
 - options `Object`
-    - imagemagick `Boolean` - Flag to indicate whether to use [ImageMagick][] over [Graphics Magick][]
+    - imagemagick `Boolean` - Flag to indicate whether to use [ImageMagick][] over [GraphicsMagick][]
         - When `true`, [ImageMagick][] will be used. Otherwise, [implicit discovery](#requirements) will be used.
 
 ### `canvas.export(options, cb)`
