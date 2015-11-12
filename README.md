@@ -12,9 +12,10 @@ I have found it is best to install from the site rather than through a package m
 
 This module has been developed and tested against `1.3.17`.
 
-> Alertnatively, you can use ImageMagick which is implicitly discovered if `gm` is not installed.
+> Alertnatively, you can use [ImageMagick][] which is implicitly discovered if `gm` is not installed.
 > http://www.imagemagick.org/script/index.php
 
+[ImageMagick]: http://www.imagemagick.org/script/index.php
 [GraphicsMagick]: http://www.graphicsmagick.org/
 
 ## Getting Started
