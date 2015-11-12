@@ -1,5 +1,5 @@
 // Load our dependencies
-var gmsmith = require('../lib/gmsmith');
+var gmsmith = require('../');
 var spritesmithEngineTest = require('spritesmith-engine-test');
 
 // Configure gmsmith for our environment
