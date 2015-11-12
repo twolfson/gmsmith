@@ -14,7 +14,6 @@ if (process.env.TEST_IMAGEMAGICK === 'TRUE') {
 spritesmithEngineTest.run({
   engine: gmsmith,
   engineName: 'gmsmith',
-  // TODO: Be sure to add support for this in `spritesmith-engine-test`
   engineOptions: engineOptions,
   tests: {
     // DEV: When we have exactly 1 png, it seems to darken the entire canvas
