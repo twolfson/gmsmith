@@ -1,4 +1,6 @@
 # gmsmith changelog
+0.6.4 - Added `specVersion` to repository and `spritesmith-engine` to keywords
+
 0.6.3 - Fixed failing Travis CI tests
 
 0.6.2 - Cleaned up README and updated spec link to `spritesmith-engine-spec`
