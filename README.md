@@ -21,22 +21,33 @@ This module has been developed and tested against `1.3.17`.
 Install the module with: `npm install gmsmith`
 
 ```js
-// Convert images into gmsmith objects
-var images = ['img1.jpg', 'img2.png'];
-gmsmith.createImages(this.images, function handleImages (err, imgs) {
-  // Create a canvas to draw onto (200 pixels wide, 300 pixels tall)
-  gmsmith.createCanvas(200, 200, function (err, canvas) {
-    // Add each image at a specific location (upper left corner = {x, y})
-    var coordinatesArr = [{x: 0, y: 0}, {x: 50, y: 50}];
-    imgs.forEach(function (img, i) {
-      var coordinates = coordinatesArr[i];
-      canvas.addImage(img, coordinates.x, coordinates.y);
-    }, canvas);
+// Load in our dependencies
+var Gmsmith = require('gmsmith');
 
-    // Export canvas to image
-    canvas['export']({format: 'png'}, function (err, result) {
-      result; // Binary string representing a PNG image of the canvas
-    });
+// Create a new engine
+var gmsmith = new Gmsmith();
+
+// Interpret some images from disk
+gmsmith.createImages(['img1.jpg', 'img2.png'], function handleImages (err, imgs) {
+  // If there was an error, throw it
+  if (err) {
+    throw err;
+  }
+
+  // We recieve images in the same order they were given
+  imgs[0].width; // 50 (pixels)
+  imgs[0].height; // 100 (pixels)
+
+  // Create a canvas that fits our images (200px wide, 300px tall)
+  var canvas = gmsmith.createCanvas(200, 300);
+
+  // Add the images to our canvas (at x=0, y=0 and x=50, y=100 respectively)
+  canvas.addImage(imgs[0], 0, 0);
+  canvas.addImage(imgs[1], 50, 100);
+
+  // Export canvas to image
+  canvas['export']({format: 'png'}, function handleOuput (err, result) {
+    result; // Binary string representing a PNG image of the canvas
   });
 });
 ```
@@ -44,9 +55,18 @@ gmsmith.createImages(this.images, function handleImages (err, imgs) {
 ## Documentation
 This module was built to the specification for spritesmith engines.
 
-**Specification version:** 1.1.0
+**Specification version:** 2.0.0
 
-https://github.com/twolfson/spritesmith-engine-spec/tree/1.1.0
+https://github.com/twolfson/spritesmith-engine-spec/tree/2.0.0
+
+### `new Engine(options)`
+This is also known as `new Gmsmith`.
+
+Our `Engine` constructor provides support for the following options:
+
+- options `Object`
+    - imagemagick `Boolean` - Flag to indicate whether to use [ImageMagick][] over [Graphics Magick][]
+        - When `true`, [ImageMagick][] will be used. Otherwise, [implicit discovery](#requirements) will be used.
 
 ### `canvas.export(options, cb)`
 Our `export` method provides support for the following options:
