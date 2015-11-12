@@ -50,10 +50,9 @@
     "twolfson-style": "~1.6.1"
   },
   "keywords": [
-    "phantomjs",
     "spritesmith",
     "image",
-    "layout"
+    "spritesmith-engine"
   ],
   "foundry": {
     "registerVersion": "0.1.0",
