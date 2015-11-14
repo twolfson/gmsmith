@@ -47,9 +47,8 @@ gmsmith.createImages(['img1.jpg', 'img2.png'], function handleImages (err, imgs)
   canvas.addImage(imgs[1], 50, 100);
 
   // Export canvas to image
-  canvas['export']({format: 'png'}, function handleOuput (err, result) {
-    result; // Binary string representing a PNG image of the canvas
-  });
+  var resultStream = canvas['export']({format: 'png'});
+  resultStream; // Readable stream outputting PNG image of the canvas
 });
 ```
 
@@ -69,7 +68,7 @@ Our `Engine` constructor provides support for the following options:
     - imagemagick `Boolean` - Flag to indicate whether to use [ImageMagick][] over [GraphicsMagick][]
         - When `true`, [ImageMagick][] will be used. Otherwise, [implicit discovery](#requirements) will be used.
 
-### `canvas.export(options, cb)`
+### `canvas.export(options)`
 Our `export` method provides support for the following options:
 
 - options `Object`
