@@ -34,7 +34,6 @@
   },
   "dependencies": {
     "async": "~0.2.7",
-    "concat-stream": "~1.5.1",
     "gm": "~1.17.0",
     "obj-extend": "~0.1.0",
     "which": "~1.0.5"
