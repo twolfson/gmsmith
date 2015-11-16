@@ -16,9 +16,13 @@ spritesmithEngineTest.run({
   engineName: 'gmsmith',
   engineOptions: engineOptions,
   tests: {
-    // DEV: When we have exactly 1 png, it seems to darken the entire canvas
-    //   Thankfully we still have a test for multiple png images which passes
-    renderPngCanvas: false,
+    // DEV: PNG seems to darken with only 1 image on IMAGEMAGICK, disable those tests for now
+    renderPngCanvas: !(process.env.TEST_IMAGEMAGICK),
+    // Disable buffer/stream tests since they are warnings only and we don't use contents
+    renderPngBufferVinylCanvas: false,
+    renderPngStreamVinylCanvas: false,
+    // DEV: PNG seems to darken with only 1 image on IMAGEMAGICK, disable those tests for now
+    renderPngNullVinylCanvas: !(process.env.TEST_IMAGEMAGICK),
     renderMultiplePngImages: true,
     // DEV: JPG seems to change significantly on Travis CI for IMAGEMAGICK, disable those tests for now
     renderJpgCanvas: !(process.env.TRAVIS && process.env.TEST_IMAGEMAGICK),
