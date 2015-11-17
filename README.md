@@ -68,6 +68,17 @@ Our `Engine` constructor provides support for the following options:
     - imagemagick `Boolean` - Flag to indicate whether to use [ImageMagick][] over [GraphicsMagick][]
         - When `true`, [ImageMagick][] will be used. Otherwise, [implicit discovery](#requirements) will be used.
 
+### `engine.createImages(images, cb)`
+Our `createImages` methods supports the following types of images:
+
+- image `String` - Filepath to image
+- image `Object` - Vinyl object with `null` for image (uses provided filepath)
+
+We accept but don't fully support the following types of images:
+
+- image `Object` - Vinyl object with buffer for image (ignores contents, uses provided filepath)
+- image `Object` - Vinyl object with stream for image (ignores contents, uses provided filepath)
+
 ### `canvas.export(options)`
 Our `export` method provides support for the following options:
 
