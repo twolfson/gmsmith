@@ -15,12 +15,7 @@
   "bugs": {
     "url": "https://github.com/twolfson/gmsmith/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/twolfson/gmsmith/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "main": "lib/engine",
   "engines": {
     "node": ">= 0.10.0"
