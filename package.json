@@ -28,18 +28,18 @@
     "test": "npm run precheck && mocha --reporter dot --timeout 60000 && npm run lint"
   },
   "dependencies": {
-    "async": "~0.2.7",
-    "gm": "~1.17.0",
+    "async": "~1.5.2",
+    "gm": "~1.21.1",
     "obj-extend": "~0.1.0",
-    "which": "~1.0.5"
+    "which": "~1.2.4"
   },
   "devDependencies": {
     "foundry": "~4.3.2",
     "foundry-release-git": "~2.0.2",
     "foundry-release-npm": "~2.0.2",
-    "jscs": "~2.4.0",
-    "jshint": "~2.8.0",
-    "mocha": "~1.21.4",
+    "jscs": "~2.11.0",
+    "jshint": "~2.9.0",
+    "mocha": "~2.4.5",
     "spritesmith-engine-test": "~4.0.0",
     "twolfson-style": "~1.6.1"
   },
