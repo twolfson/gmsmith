@@ -1,4 +1,6 @@
 # gmsmith changelog
+1.0.1 - Updated license in `package.json` to SPDX format via @danez in #8
+
 1.0.0 - Upgraded to `spritesmith-engine-spec@2.0.0`
 
 0.6.4 - Added `specVersion` to repository and `spritesmith-engine` to keywords
