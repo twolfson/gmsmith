@@ -1,4 +1,6 @@
 # gmsmith changelog
+1.1.1 - Added `format` documentation to README via @marekventur in #11
+
 1.1.0 - Updated dependencies via @danez in #9. Fixes #7
 
 1.0.1 - Updated license in `package.json` to SPDX format via @danez in #8
