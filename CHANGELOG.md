@@ -1,4 +1,6 @@
 # gmsmith changelog
+1.1.2 - Added fallback for `options` via @@marekventur in #12
+
 1.1.1 - Added `format` documentation to README via @marekventur in #11
 
 1.1.0 - Updated dependencies via @danez in #9. Fixes #7
