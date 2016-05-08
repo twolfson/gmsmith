@@ -83,6 +83,7 @@ We accept but don't fully support the following types of images:
 Our `export` method provides support for the following options:
 
 - options `Object`
+    - format `String` - Output image format to callback with. Currently, png and jpeg are available.
     - quality `Number` - Quality of output image on a scale from 0 to 100
 
 ## Contributing
