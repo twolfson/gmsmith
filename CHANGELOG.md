@@ -1,4 +1,6 @@
 # gmsmith changelog
+1.1.3 - Replaced Gittip with support me page
+
 1.1.2 - Added fallback for `options` via @@marekventur in #12
 
 1.1.1 - Added `format` documentation to README via @marekventur in #11
