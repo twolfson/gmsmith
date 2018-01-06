@@ -1,4 +1,6 @@
 # gmsmith changelog
+1.1.6 - Moved to Node.js>=4 to fix Travis CI
+
 1.1.5 - Corrected CHANGELOG
 
 1.1.4 - Upgraded to `spritesmith-engine-test@5.0.0` to verify Vinyl@2 support
