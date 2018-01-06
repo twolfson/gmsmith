@@ -1,5 +1,7 @@
 # gmsmith changelog
-1.1.4 - Upgraded to `spritesmith-engine-spec@5.0.0` to verify Vinyl@2 support
+1.1.5 - Corrected CHANGELOG
+
+1.1.4 - Upgraded to `spritesmith-engine-test@5.0.0` to verify Vinyl@2 support
 
 1.1.3 - Replaced Gittip with support me page
 
@@ -11,7 +13,7 @@
 
 1.0.1 - Updated license in `package.json` to SPDX format via @danez in #8
 
-1.0.0 - Upgraded to `spritesmith-engine-spec@4.0.0`
+1.0.0 - Upgraded to `spritesmith-engine-spec@2.0.0`
 
 0.6.4 - Added `specVersion` to repository and `spritesmith-engine` to keywords
 
