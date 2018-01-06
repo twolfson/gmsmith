@@ -1,21 +1,21 @@
 language: node_js
+sudo: false
 node_js:
-  - "4.2"
-  - "0.12"
-  - "0.11"
-  - "0.10"
-
+  - "9"
+  - "8"
+  - "6"
+  - "4"
 matrix:
   allow_failures:
-    - node_js: "0.11"
+    - node_js: "9"
   include:
-    - node_js: "0.10"
+    - node_js: "8"
       env: TEST_GRAPHICSMAGICK=TRUE
-    - node_js: "0.10"
+    - node_js: "8"
       env: TEST_IMAGEMAGICK=TRUE
-    - node_js: "0.10"
+    - node_js: "8"
       env: TEST_IMAGEMAGICK=IMPLICIT
-    - node_js: "0.10"
+    - node_js: "8"
       env: TEST_IMAGEMAGICK=IMPLICIT_WITH_SET
 
 before_install:
@@ -36,4 +36,8 @@ script:
   - npm test
 
 notifications:
-  email: false
+  email:
+    recipients:
+      - todd@twolfson.com
+    on_success: change
+    on_failure: change
