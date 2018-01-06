@@ -5,11 +5,11 @@ set -e
 # Perform our installations
 if test -n "$TEST_IMAGEMAGICK"; then
   # Install imagemagick
-  apt-get update
-  apt-get install imagemagick -y
+  sudo apt-get update
+  sudo apt-get install imagemagick -y
 else
   # Uninstall imagemagick from Travis CI
-  apt-get remove imagemagick -y
+  sudo apt-get remove imagemagick -y
 
   # Download, make, and install graphicsmagick
   wget http://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.17/GraphicsMagick-1.3.17.tar.xz/download --output-document GraphicsMagick-1.3.17.tar.xz
@@ -17,6 +17,6 @@ else
   cd GraphicsMagick-1.3.17
   ./configure
   make
-  make install
+  sudo make install
   cd ..
 fi
