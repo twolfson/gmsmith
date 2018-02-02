@@ -1,4 +1,6 @@
 # gmsmith changelog
+1.2.0 - Upgraded to `gm@1.23.1` to fix vulnerabilities via @danez in #15
+
 1.1.6 - Moved to Node.js>=4 to fix Travis CI
 
 1.1.5 - Corrected CHANGELOG
