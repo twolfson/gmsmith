@@ -1,21 +1,18 @@
 language: node_js
 sudo: required
 node_js:
-  - "9"
-  - "8"
-  - "6"
-  - "4"
+  - "16"
+  - "14"
+  - "12"
 matrix:
-  allow_failures:
-    - node_js: "9"
   include:
-    - node_js: "8"
+    - node_js: "14"
       env: TEST_GRAPHICSMAGICK=TRUE
-    - node_js: "8"
+    - node_js: "14"
       env: TEST_IMAGEMAGICK=TRUE
-    - node_js: "8"
+    - node_js: "14"
       env: TEST_IMAGEMAGICK=IMPLICIT
-    - node_js: "8"
+    - node_js: "14"
       env: TEST_IMAGEMAGICK=IMPLICIT_WITH_SET
 
 before_install:
