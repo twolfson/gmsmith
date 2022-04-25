@@ -1,0 +1,41 @@
+name: CI
+
+on: [ push, pull_request ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node_version:
+          - 12
+          - 14
+          - 16
+        test_graphicsmagick: ["TRUE"]
+        test_imagemagick: [""]
+        include:
+          - node_version: 14
+            test_graphicsmagick: "TRUE"
+            test_imagemagick: ""
+          - node_version: 14
+            test_graphicsmagick: ""
+            test_imagemagick: "TRUE"
+    env:
+      TEST_GRAPHICSMAGICK: ${{ matrix.test_graphicsmagick }}
+      TEST_IMAGEMAGICK: ${{ matrix.test_imagemagick }}
+    name: Node.js ${{ matrix.node_version }}, GraphicsMagick=${{ matrix.test_graphicsmagick }}, ImageMagick=${{ matrix.test_imagemagick }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Install Graphicsmagick or Imagemagick
+        run: |
+          test/install.sh
+      - name: Show the im/gm version
+        run: if test -n "$TEST_IMAGEMAGICK"; then convert -version; else gm -version; fi
+      - name: Install Node.js dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
