@@ -1,4 +1,6 @@
 # gmsmith changelog
+1.4.0 - Upgraded dependencies via @striezel in #19
+
 1.3.0 - Upgraded dependencies via @striezel in #17
 
 1.2.0 - Upgraded to `gm@1.23.1` to fix vulnerabilities via @danez in #15
